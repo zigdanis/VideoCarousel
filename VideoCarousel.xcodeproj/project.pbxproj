@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		096859A31DF2DF56005756D9 /* VideoCarouselTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859A21DF2DF56005756D9 /* VideoCarouselTests.swift */; };
 		096859BB1DF2DF9F005756D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096859AD1DF2DF9F005756D9 /* Assets.xcassets */; };
 		096859BC1DF2DF9F005756D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859AF1DF2DF9F005756D9 /* AppDelegate.swift */; };
 		096859BD1DF2DF9F005756D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096859B21DF2DF9F005756D9 /* LaunchScreen.storyboard */; };
 		096859BE1DF2DF9F005756D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096859B41DF2DF9F005756D9 /* Main.storyboard */; };
 		096859C01DF2DF9F005756D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859B91DF2DF9F005756D9 /* ViewController.swift */; };
+		096859C21DF2E2E8005756D9 /* VideoFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859C11DF2E2E8005756D9 /* VideoFrame.swift */; };
+		096859C41DF2E375005756D9 /* VideoFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859C31DF2E375005756D9 /* VideoFrameTests.swift */; };
+		096859C51DF2E609005756D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096859AD1DF2DF9F005756D9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,6 @@
 /* Begin PBXFileReference section */
 		0968598A1DF2DF55005756D9 /* VideoCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0968599E1DF2DF56005756D9 /* VideoCarouselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoCarouselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		096859A21DF2DF56005756D9 /* VideoCarouselTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCarouselTests.swift; sourceTree = "<group>"; };
 		096859A41DF2DF56005756D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096859AD1DF2DF9F005756D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		096859AF1DF2DF9F005756D9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +37,8 @@
 		096859B51DF2DF9F005756D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		096859B71DF2DF9F005756D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		096859B91DF2DF9F005756D9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		096859C11DF2E2E8005756D9 /* VideoFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrame.swift; sourceTree = "<group>"; };
+		096859C31DF2E375005756D9 /* VideoFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrameTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +94,8 @@
 		096859A11DF2DF56005756D9 /* VideoCarouselTests */ = {
 			isa = PBXGroup;
 			children = (
-				096859A21DF2DF56005756D9 /* VideoCarouselTests.swift */,
 				096859A41DF2DF56005756D9 /* Info.plist */,
+				096859C31DF2E375005756D9 /* VideoFrameTests.swift */,
 			);
 			path = VideoCarouselTests;
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 		096859B01DF2DF9F005756D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				096859C11DF2E2E8005756D9 /* VideoFrame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +204,7 @@
 					0968599D1DF2DF56005756D9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = XMSU8WJG5R;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 096859891DF2DF55005756D9;
 					};
@@ -239,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096859C51DF2E609005756D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				096859C01DF2DF9F005756D9 /* ViewController.swift in Sources */,
+				096859C21DF2E2E8005756D9 /* VideoFrame.swift in Sources */,
 				096859BC1DF2DF9F005756D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096859A31DF2DF56005756D9 /* VideoCarouselTests.swift in Sources */,
+				096859C41DF2E375005756D9 /* VideoFrameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,11 +425,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
 				INFOPLIST_FILE = VideoCarouselTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zigdanis.VideoCarouselTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoCarousel.app/VideoCarousel";
 			};
@@ -433,6 +442,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
 				INFOPLIST_FILE = VideoCarouselTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
