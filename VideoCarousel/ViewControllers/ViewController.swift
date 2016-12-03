@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         topCarousel.translatesAutoresizingMaskIntoConstraints = false
         topCarousel.dataSource = framesProvider
         topCarousel.backgroundColor = UIColor.black
+        topCarousel.decelerationRate = UIScrollViewDecelerationRateFast
         let nib = UINib(nibName: "VideoFrameCell", bundle: nil)
         topCarousel.register(nib, forCellWithReuseIdentifier: VideoFrameCellIdentifier)
         
