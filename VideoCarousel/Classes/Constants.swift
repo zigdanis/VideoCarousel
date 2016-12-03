@@ -10,3 +10,5 @@ import Foundation
 import UIKit
 
 let Rounding: CGFloat = 4
+let VideoFrameCellIdentifier = "VideoFrameCell"
+let BigNumber: Int = 100

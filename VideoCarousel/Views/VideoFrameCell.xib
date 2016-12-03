@@ -14,23 +14,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoFrameCell" id="hgE-Xf-axC" customClass="VideoFrameCell" customModule="VideoCarousel" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="332" height="302"/>
+            <rect key="frame" x="0.0" y="0.0" width="216" height="203"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="332" height="302"/>
+                <rect key="frame" x="0.0" y="0.0" width="216" height="203"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gly-Zk-Vwg" userLabel="borderPanel">
-                        <rect key="frame" x="0.0" y="0.0" width="332" height="302"/>
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="203"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-winter" translatesAutoresizingMaskIntoConstraints="NO" id="7TN-Dy-Yg0">
-                                <rect key="frame" x="8" y="8" width="316" height="180.5"/>
+                                <rect key="frame" x="8" y="8" width="200" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7TN-Dy-Yg0" secondAttribute="height" multiplier="7:4" id="Pn3-9d-m5X"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="900" text="Ужасы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK8-Dn-7Vy">
-                                <rect key="frame" x="8" y="196.5" width="316" height="97.5"/>
+                                <rect key="frame" x="8" y="130" width="200" height="65"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -38,13 +38,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="8m0-WO-IfB"/>
                             <constraint firstItem="7TN-Dy-Yg0" firstAttribute="leading" secondItem="Gly-Zk-Vwg" secondAttribute="leadingMargin" id="BAL-gs-sfc"/>
                             <constraint firstAttribute="bottomMargin" secondItem="rK8-Dn-7Vy" secondAttribute="bottom" id="IM6-B5-eaG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7TN-Dy-Yg0" secondAttribute="trailing" id="JHG-6J-d57"/>
                             <constraint firstItem="rK8-Dn-7Vy" firstAttribute="leading" secondItem="Gly-Zk-Vwg" secondAttribute="leadingMargin" id="L9O-GV-Lhl"/>
                             <constraint firstItem="rK8-Dn-7Vy" firstAttribute="top" secondItem="7TN-Dy-Yg0" secondAttribute="bottom" constant="8" id="XuN-y0-MKP"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ZBH-Ed-ng8"/>
                             <constraint firstItem="7TN-Dy-Yg0" firstAttribute="top" secondItem="Gly-Zk-Vwg" secondAttribute="topMargin" id="wQm-kz-oOA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rK8-Dn-7Vy" secondAttribute="trailing" id="zTQ-DC-is5"/>
                         </constraints>
@@ -57,13 +55,13 @@
                 <constraint firstAttribute="trailing" secondItem="Gly-Zk-Vwg" secondAttribute="trailing" id="Vbr-Lo-MSQ"/>
                 <constraint firstAttribute="bottom" secondItem="Gly-Zk-Vwg" secondAttribute="bottom" id="uKV-UG-GMB"/>
             </constraints>
-            <size key="customSize" width="332" height="302"/>
+            <size key="customSize" width="216" height="203"/>
             <connections>
                 <outlet property="borderPanel" destination="Gly-Zk-Vwg" id="4eT-MX-Su0"/>
                 <outlet property="imageView" destination="7TN-Dy-Yg0" id="w3s-UH-8TN"/>
                 <outlet property="titleLabel" destination="rK8-Dn-7Vy" id="lKm-pE-Vxu"/>
             </connections>
-            <point key="canvasLocation" x="63" y="67"/>
+            <point key="canvasLocation" x="5" y="17.5"/>
         </collectionViewCell>
     </objects>
     <resources>

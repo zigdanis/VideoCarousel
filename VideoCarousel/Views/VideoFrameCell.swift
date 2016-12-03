@@ -24,8 +24,8 @@ class VideoFrameCell: UICollectionViewCell {
     private func updateRoundedBorders() {
         borderPanel.layer.cornerRadius = Rounding
         borderPanel.layer.masksToBounds = false
-        borderPanel.layer.borderColor = UIColor.orange.cgColor
-        borderPanel.layer.borderWidth = 1
+//        borderPanel.layer.borderColor = UIColor.appOrange.cgColor
+//        borderPanel.layer.borderWidth = 1
         imageView.layer.cornerRadius = Rounding
     }
 }

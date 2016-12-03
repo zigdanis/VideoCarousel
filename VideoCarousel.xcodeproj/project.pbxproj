@@ -21,6 +21,7 @@
 		096859D01DF33737005756D9 /* VideoFrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859CF1DF33737005756D9 /* VideoFrameCell.swift */; };
 		096859D21DF33758005756D9 /* VideoFrameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 096859D11DF33758005756D9 /* VideoFrameCell.xib */; };
 		096859D41DF339BC005756D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096859D31DF339BC005756D9 /* Constants.swift */; };
+		09BE799D1DF34F18005E768C /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE799C1DF34F18005E768C /* UIColor+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		096859CF1DF33737005756D9 /* VideoFrameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrameCell.swift; sourceTree = "<group>"; };
 		096859D11DF33758005756D9 /* VideoFrameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoFrameCell.xib; sourceTree = "<group>"; };
 		096859D31DF339BC005756D9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		09BE799C1DF34F18005E768C /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				096859C91DF32C45005756D9 /* InfinityCarouselLayout.swift */,
 				096859CB1DF32CCF005756D9 /* VideoFrameProvider.swift */,
 				096859D31DF339BC005756D9 /* Constants.swift */,
+				09BE799C1DF34F18005E768C /* UIColor+Helpers.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				096859D41DF339BC005756D9 /* Constants.swift in Sources */,
 				096859CC1DF32CCF005756D9 /* VideoFrameProvider.swift in Sources */,
 				096859BC1DF2DF9F005756D9 /* AppDelegate.swift in Sources */,
+				09BE799D1DF34F18005E768C /* UIColor+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +508,7 @@
 				096859A91DF2DF56005756D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		096859AA1DF2DF56005756D9 /* Build configuration list for PBXNativeTarget "VideoCarouselTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +517,7 @@
 				096859AC1DF2DF56005756D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
