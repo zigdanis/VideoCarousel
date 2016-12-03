@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-class VideoFrameProvider {
+class VideoFrameProvider: NSObject, UICollectionViewDataSource {
     var frames: [VideoFrame]
     
     init?(frames: [VideoFrame]) {
@@ -21,6 +22,15 @@ class VideoFrameProvider {
         let offset = abs(index % totalCount)
         let value = frames[offset]
         return value
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Int.max
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        return cell
     }
     
 }
