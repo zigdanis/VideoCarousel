@@ -24,8 +24,9 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if !didInitialScroll {
-            let ip = IndexPath(item: 50, section: 0)
+            let ip = IndexPath(item: BigNumber/2, section: 0)
             topCarousel.scrollToItem(at: ip, at: .centeredHorizontally, animated: false)
+            topCarousel.contentOffset = topLayout.targetContentOffset(forProposedContentOffset: topCarousel.contentOffset, withScrollingVelocity: .zero)
             didInitialScroll = true
         }
     }
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
             topCarousel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 25),
             topCarousel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             topCarousel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            topCarousel.heightAnchor.constraint(equalToConstant: 165)
+            topCarousel.widthAnchor.constraint(equalTo: topCarousel.heightAnchor, multiplier: 4.3)
         ]
         NSLayoutConstraint.activate(consts)
     }

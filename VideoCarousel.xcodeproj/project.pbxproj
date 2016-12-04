@@ -23,6 +23,7 @@
 		09BE79A01DF40F3D005E768C /* VideoFramesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE799F1DF40F3D005E768C /* VideoFramesViewModel.swift */; };
 		09BE79A41DF41122005E768C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79A21DF41122005E768C /* Constants.swift */; };
 		09BE79A51DF41122005E768C /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79A31DF41122005E768C /* UIColor+Helpers.swift */; };
+		09BE79A71DF46539005E768C /* CarouselLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79A61DF46539005E768C /* CarouselLayoutAttributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		09BE799F1DF40F3D005E768C /* VideoFramesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFramesViewModel.swift; sourceTree = "<group>"; };
 		09BE79A21DF41122005E768C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09BE79A31DF41122005E768C /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
+		09BE79A61DF46539005E768C /* CarouselLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselLayoutAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				096859AF1DF2DF9F005756D9 /* AppDelegate.swift */,
 				096859C91DF32C45005756D9 /* CarouselLayout.swift */,
+				09BE79A61DF46539005E768C /* CarouselLayoutAttributes.swift */,
 				096859CB1DF32CCF005756D9 /* VideoFrameProvider.swift */,
 			);
 			path = Classes;
@@ -304,6 +307,7 @@
 				096859CC1DF32CCF005756D9 /* VideoFrameProvider.swift in Sources */,
 				096859BC1DF2DF9F005756D9 /* AppDelegate.swift in Sources */,
 				09BE79A01DF40F3D005E768C /* VideoFramesViewModel.swift in Sources */,
+				09BE79A71DF46539005E768C /* CarouselLayoutAttributes.swift in Sources */,
 				09BE79A41DF41122005E768C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,7 +25,16 @@ class VideoFrameCell: UICollectionViewCell {
         borderPanel.layer.cornerRadius = Rounding
         borderPanel.layer.masksToBounds = false
         borderPanel.layer.borderColor = UIColor.appOrange.cgColor
-        borderPanel.layer.borderWidth = 1
+        borderPanel.layer.borderWidth = 2
         imageView.layer.cornerRadius = Rounding
     }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        guard let myAtts = layoutAttributes as? CarouselLayoutAttributes else {
+            assertionFailure("Should provide custom Attributes for layout changes")
+            return
+        }
+        borderPanel.isHidden = !myAtts.selected
+    }
+
 }

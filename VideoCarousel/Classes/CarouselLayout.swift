@@ -11,16 +11,19 @@ import UIKit
 
 class CarouselLayout: UICollectionViewFlowLayout {
     
-    let increaseMultiplier: CGFloat = 1.4
+    let increaseMultiplier: CGFloat = 1.6
     let verticalPadding: CGFloat = 15
     let distanceToGrow: CGFloat = 100
-    let offset: CGFloat = 20
+    let interItemGap: CGFloat = 35
+    let increasedAspectRatio: CGFloat = 1.25
+    let normalAspectRatio: CGFloat = 1.11
     
     override init() {
         super.init()
-        itemSize = CGSize(width: 100, height: 100)
+        itemSize = CGSize(width: 100, height: 100/normalAspectRatio)
         scrollDirection = .horizontal
-        minimumLineSpacing = 20
+        minimumLineSpacing = 0
+        minimumInteritemSpacing = CGFloat.greatestFiniteMagnitude
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,8 +36,16 @@ class CarouselLayout: UICollectionViewFlowLayout {
     
     private func normalItemSize() -> CGSize {
         guard let totalWidth = collectionView?.bounds.width else { return .zero }
-        let side = totalWidth / (5 + increaseMultiplier)
-        return CGSize(width: side, height: side)
+        let side = (totalWidth - minimumLineSpacing * 2) / (5 + increaseMultiplier)
+        return CGSize(width: side, height: side/normalAspectRatio)
+    }
+    
+    // MARK: - Layout
+    
+    override class var layoutAttributesClass: Swift.AnyClass {
+        get {
+            return CarouselLayoutAttributes.self
+        }
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -46,19 +57,29 @@ class CarouselLayout: UICollectionViewFlowLayout {
         guard let colCenter = collectionView?.center.x else { return atts }
         guard let offset = collectionView?.contentOffset.x else { return atts }
         let theCenter = colCenter + offset
-        var copyAtts = [UICollectionViewLayoutAttributes]()
+        var copyAtts = [CarouselLayoutAttributes]()
         for origAtt in atts {
-            let att = origAtt.copy() as! UICollectionViewLayoutAttributes
+            let att = origAtt.copy() as! CarouselLayoutAttributes
             let center = att.center.x
-            let diff = abs(theCenter - center)
-            if diff <= distanceToGrow {
-                let percentage = 1 - diff/distanceToGrow // 0..100%
+            let diff = center - theCenter
+            let absDiff = abs(diff)
+            if diff > distanceToGrow {
+                att.center.x = att.center.x + interItemGap
+            } else if absDiff <= distanceToGrow {
+                let percentage = 1 - absDiff/distanceToGrow // 0..100%
                 let mult = 1 + ((increaseMultiplier - 1) * percentage)
                 var size = att.size
                 size.width *= mult
-                size.height *= mult
+                size.height = max(size.height, size.width / increasedAspectRatio)
                 att.size = size
+                
+                // 1..0..-1
+                let signPercentage = diff/distanceToGrow
+                att.center.x = att.center.x + interItemGap * signPercentage
+            } else {
+                att.center.x = att.center.x - interItemGap
             }
+            att.selected = absDiff<1
             copyAtts.append(att)
         }
         return copyAtts
@@ -71,7 +92,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
         guard let width = collectionView?.bounds.size.width else { return proposedContentOffset }
         guard let height = collectionView?.bounds.size.height else { return proposedContentOffset }
         let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width:width , height: height)
-        guard let atts = layoutAttributesForElements(in: targetRect) else { return proposedContentOffset }
+        guard let atts = super.layoutAttributesForElements(in: targetRect) else { return proposedContentOffset }
         var offsetAdjsutment = CGFloat.greatestFiniteMagnitude
         for att in atts {
             let itemOffset = att.center.x
@@ -81,5 +102,4 @@ class CarouselLayout: UICollectionViewFlowLayout {
         }
         return CGPoint(x: proposedContentOffset.x + offsetAdjsutment, y: proposedContentOffset.y)
     }
-    
 }
