@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     var topCarousel: UICollectionView!
-    var topLayout: CarouselLayout!
     let videoFramesVM = VideoFramesViewModel()
     var didInitialScroll = false
     
@@ -26,18 +25,19 @@ class ViewController: UIViewController {
         if !didInitialScroll {
             let ip = IndexPath(item: BigNumber/2, section: 0)
             topCarousel.scrollToItem(at: ip, at: .centeredHorizontally, animated: false)
-            topCarousel.contentOffset = topLayout.targetContentOffset(forProposedContentOffset: topCarousel.contentOffset, withScrollingVelocity: .zero)
+            topCarousel.contentOffset = videoFramesVM.topLayout.targetContentOffset(forProposedContentOffset: topCarousel.contentOffset, withScrollingVelocity: .zero)
             didInitialScroll = true
         }
     }
     
     private func setupTopCarousel() {
-        topLayout = CarouselLayout()
-        topCarousel = UICollectionView(frame: .zero, collectionViewLayout: topLayout)
+        topCarousel = UICollectionView(frame: .zero, collectionViewLayout: videoFramesVM.topLayout)
         topCarousel.translatesAutoresizingMaskIntoConstraints = false
         topCarousel.dataSource = videoFramesVM.framesProvider
+        topCarousel.delegate = videoFramesVM.topLayout
         topCarousel.backgroundColor = UIColor.black
         topCarousel.decelerationRate = UIScrollViewDecelerationRateFast
+        topCarousel.layer.cornerRadius = Rounding
         let nib = UINib(nibName: VideoFrameCellIdentifier, bundle: nil)
         topCarousel.register(nib, forCellWithReuseIdentifier: VideoFrameCellIdentifier)
         

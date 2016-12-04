@@ -8,15 +8,18 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
-class CarouselLayout: UICollectionViewFlowLayout {
+class CarouselLayout: UICollectionViewFlowLayout, UICollectionViewDelegate {
     
-    let increaseMultiplier: CGFloat = 1.6
-    let verticalPadding: CGFloat = 15
-    let distanceToGrow: CGFloat = 100
-    let interItemGap: CGFloat = 35
-    let increasedAspectRatio: CGFloat = 1.25
-    let normalAspectRatio: CGFloat = 1.11
+    private let increaseMultiplier: CGFloat = 1.6
+    private let verticalPadding: CGFloat = 15
+    private let distanceToGrow: CGFloat = 100
+    private let interItemGap: CGFloat = 35
+    private let increasedAspectRatio: CGFloat = 1.25
+    private let normalAspectRatio: CGFloat = 1.1
+    
+    let selectedIndexPath = Variable<IndexPath?>(nil)
     
     override init() {
         super.init()
@@ -38,6 +41,17 @@ class CarouselLayout: UICollectionViewFlowLayout {
         guard let totalWidth = collectionView?.bounds.width else { return .zero }
         let side = (totalWidth - minimumLineSpacing * 2) / (5 + increaseMultiplier)
         return CGSize(width: side, height: side/normalAspectRatio)
+    }
+    
+    // MARK: - ScrollView Delegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let width = collectionView?.bounds.size.width else { return }
+        guard let height = collectionView?.bounds.size.height else { return }
+        let targetRect = CGRect(x: scrollView.contentOffset.x, y: 0, width:width , height: height)
+        guard let atts = layoutAttributesForElements(in: targetRect) as? [CarouselLayoutAttributes] else { return }
+        let selected = atts.filter{ $0.selected }.first
+        selectedIndexPath.value = selected?.indexPath
     }
     
     // MARK: - Layout

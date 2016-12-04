@@ -12,12 +12,12 @@ import UIKit
 struct VideoFrame {
     let title: String
     let image: UIImage
-    var selected: Bool
+    let genre: Genre
     
-    init?(title: String, image: UIImage?, selected: Bool = false) {
+    init?(title: String, image: UIImage?, genre: Genre) {
         guard let img = image else { return nil }
         self.title = title
         self.image = img
-        self.selected = selected
+        self.genre = genre
     }
 }
