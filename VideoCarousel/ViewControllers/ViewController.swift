@@ -14,18 +14,17 @@ final class ViewController: UIViewController {
     var topCarousel: UICollectionView!
     var bottomCarousel: UICollectionView!
     let videoFramesVM = VideoFramesViewModel()
-    let moviesVM = MoviesViewModel()
+    var moviesVM: MoviesViewModel!
     var didInitialScroll = false
     var arrow: UIImageView!
-    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appPink
+        moviesVM = MoviesViewModel(videoFramesVM: videoFramesVM)
         setupTopCarousel()
         setupArrow()
         setupBottomCarousel()
-        connectBottomCarouselForNewGenre()
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,13 +71,7 @@ final class ViewController: UIViewController {
     }
     
     private func setupBottomCarousel() {
-        bottomCarousel = UICollectionView(frame: .zero, collectionViewLayout: moviesVM.layout)
-        bottomCarousel.translatesAutoresizingMaskIntoConstraints = false
-        bottomCarousel.dataSource = moviesVM.provider
-        bottomCarousel.backgroundColor = UIColor.clear
-        bottomCarousel.layer.cornerRadius = Rounding
-        let nib = UINib(nibName: MovieCellIdentifier, bundle: nil)
-        bottomCarousel.register(nib, forCellWithReuseIdentifier: MovieCellIdentifier)
+        bottomCarousel = moviesVM.collectionView
         
         view.addSubview(bottomCarousel)
         let consts = [
@@ -90,16 +83,5 @@ final class ViewController: UIViewController {
         NSLayoutConstraint.activate(consts)
     }
 
-    func connectBottomCarouselForNewGenre() {
-        videoFramesVM.selectedGenre
-            .map({ genre -> IndexPath in
-                print("New Genre = \(genre)")
-                return self.moviesVM.indexPath(for: genre)
-            })
-            .subscribe(onNext: { indexPath in
-                self.bottomCarousel.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            })
-            .addDisposableTo(disposeBag)
-    }
 }
 

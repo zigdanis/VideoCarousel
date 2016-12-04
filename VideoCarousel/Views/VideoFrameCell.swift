@@ -37,4 +37,8 @@ final class VideoFrameCell: UICollectionViewCell {
         borderPanel.isHidden = !myAtts.selected
     }
 
+    func updateCell(with frame:VideoFrame) {
+        imageView.image = frame.image
+        titleLabel.text = frame.title
+    }
 }

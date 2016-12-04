@@ -8,30 +8,50 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 final class MoviesViewModel {
     
-    let provider: MoviesProvider
-    let layout: MoviesLayout
+    let collectionView: UICollectionView
+    let videoFramesVM: VideoFramesViewModel
     
-    init() {
-        let movie1 = Movie(name: "Terminator", image: UIImage(named:"close-winter"), genre: .Action)
-        let movie2 = Movie(name: "Saw 6", image: UIImage(named:"close-winter"), genre: .Horror)
-        let movie3 = Movie(name: "Home Alone", image: UIImage(named:"close-winter"), genre: .Comedy)
-        let movie4 = Movie(name: "Man In Black", image: UIImage(named:"close-winter"), genre: .Action)
-        let movie5 = Movie(name: "Jason", image: UIImage(named:"close-winter"), genre: .Horror)
-        let movie6 = Movie(name: "Ice Age", image: UIImage(named:"close-winter"), genre: .Comedy)
-        provider = MoviesProvider(movies: [movie1!, movie2!, movie3!, movie4!, movie5!, movie6!])
+    private let provider: MoviesProvider
+    private let layout: MoviesLayout
+    private let disposeBag = DisposeBag()
+    
+    init(videoFramesVM: VideoFramesViewModel) {
+        self.videoFramesVM = videoFramesVM
+        let movies = [
+            Movie(name: "Deadpool", image: UIImage(named:"action-1"), genre: .Action)!,
+            Movie(name: "Iron man 2", image: UIImage(named:"action-2"), genre: .Action)!,
+            Movie(name: "Tron", image: UIImage(named:"action-3"), genre: .Action)!,
+            Movie(name: "Race", image: UIImage(named:"action-4"), genre: .Action)!,
+            Movie(name: "Avengers", image: UIImage(named:"action-5"), genre: .Action)!,
+            Movie(name: "Star Wars", image: UIImage(named:"action-6"), genre: .Action)!,
+            Movie(name: "Saw 6", image: UIImage(named:"horror"), genre: .Horror)!,
+            Movie(name: "Lego Movie", image: UIImage(named:"comedy"), genre: .Comedy)!,
+            Movie(name: "The Revenant", image: UIImage(named:"drama"), genre: .Drama)!,
+            Movie(name: "The Rite", image: UIImage(named:"thriller"), genre: .Thriller)!
+        ]
+        provider = MoviesProvider(movies: movies, genre: .Action)
         layout = MoviesLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        setupCollectionView()
+        
+        videoFramesVM.selectedGenre
+            .subscribe(onNext: { genre in
+                self.provider.updateSelectedMovies(for: genre)
+                self.collectionView.reloadData()
+            })
+            .addDisposableTo(disposeBag)
     }
     
-    func indexPath(for genre: Genre) -> IndexPath {
-        let index = provider.movies.index{ $0.genre == genre }
-        guard let i = index else {
-            return IndexPath(item: 0, section: 0)
-        }
-        let ip = IndexPath(item: i, section: 0)
-        return ip
-    }
-    
+    func setupCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = provider
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.layer.cornerRadius = Rounding
+        let nib = UINib(nibName: MovieCellIdentifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: MovieCellIdentifier)
+    }    
 }

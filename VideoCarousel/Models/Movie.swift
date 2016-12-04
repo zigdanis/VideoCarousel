@@ -21,3 +21,7 @@ struct Movie {
         self.genre = genre
     }
 }
+
+func < (left: Movie, right: Movie) -> Bool {
+    return left.name < right.name
+}

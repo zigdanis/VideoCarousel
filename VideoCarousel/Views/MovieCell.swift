@@ -21,4 +21,9 @@ final class MovieCell: UICollectionViewCell {
         blackPanel.layer.cornerRadius = Rounding
     }
     
+    func updateCell(with movie: Movie) {
+        imageView.image = movie.image
+        movieLabel.text = movie.name
+    }
+    
 }

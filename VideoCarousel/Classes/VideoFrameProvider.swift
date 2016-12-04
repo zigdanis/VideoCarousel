@@ -29,7 +29,9 @@ final class VideoFrameProvider: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoFrameCellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoFrameCellIdentifier, for: indexPath) as! VideoFrameCell
+        let videoFrame = itemAtIndex(index: indexPath.item)
+        cell.updateCell(with: videoFrame)
         return cell
     }
     

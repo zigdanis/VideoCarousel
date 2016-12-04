@@ -20,10 +20,14 @@ final class VideoFramesViewModel {
     let selectedGenre: Observable<Genre>
     
     init() {
-        let frame1 = VideoFrame(image: UIImage(named: "close-winter"), genre: .Horror)
-        let frame2 = VideoFrame(image: UIImage(named: "close-winter"), genre: .Comedy)
-        let frame3 = VideoFrame(image: UIImage(named: "close-winter"), genre: .Action)
-        let provider = VideoFrameProvider(frames: [frame1!, frame2!, frame3!])!
+        let frames = [
+            VideoFrame(image: UIImage(named: "frame-horror"), genre: .Horror)!,
+            VideoFrame(image: UIImage(named: "frame-comedy"), genre: .Comedy)!,
+            VideoFrame(image: UIImage(named: "frame-action"), genre: .Action)!,
+            VideoFrame(image: UIImage(named: "frame-drama"), genre: .Drama)!,
+            VideoFrame(image: UIImage(named: "frame-thriller"), genre: .Thriller)!
+        ]
+        let provider = VideoFrameProvider(frames: frames)!
         framesProvider = provider
         videoFrame = topLayout.selectedIndexPath.asObservable()
             .filter{ $0 != nil }
