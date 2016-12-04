@@ -11,7 +11,13 @@ import Foundation
 extension NSError {
     
     static let DomainName = "com.zigdanis.videocarousel"
-        
+    
+    static var unknownError: NSError {
+        get {
+            return NSError(domain: DomainName, code: 1000, userInfo: ["title": "Unknown Error"])
+        }
+    }
+    
     static var parsingError: NSError {
         get {
             return NSError(domain: DomainName, code: 900, userInfo: ["title": "Parsing Error"])

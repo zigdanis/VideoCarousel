@@ -12,10 +12,12 @@ import UIKit
 struct Movie {
     let name: String
     let image: UIImage
+    let genre: Genre
     
-    init?(name: String, image: UIImage?) {
+    init?(name: String, image: UIImage?, genre: Genre) {
         guard let img = image else { return nil }
         self.name = name
         self.image = img
+        self.genre = genre
     }
 }

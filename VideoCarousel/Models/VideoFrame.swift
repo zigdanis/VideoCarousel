@@ -10,13 +10,16 @@ import Foundation
 import UIKit
 
 struct VideoFrame {
-    let title: String
+    var title: String {
+        get {
+            return genre.rawValue
+        }
+    }
     let image: UIImage
     let genre: Genre
     
-    init?(title: String, image: UIImage?, genre: Genre) {
+    init?(image: UIImage?, genre: Genre) {
         guard let img = image else { return nil }
-        self.title = title
         self.image = img
         self.genre = genre
     }

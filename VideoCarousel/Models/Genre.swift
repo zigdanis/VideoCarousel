@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum Genre {
-    case Action
-    case Drama
-    case Comedy
-    case Horror
-    case Thriller
+enum Genre: String {
+    case Action = "Action"
+    case Drama = "Drama"
+    case Comedy = "Comedy"
+    case Horror = "Horror"
+    case Thriller = "Thriller"
 }
