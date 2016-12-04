@@ -24,6 +24,8 @@
 		09BE79A41DF41122005E768C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79A21DF41122005E768C /* Constants.swift */; };
 		09BE79A51DF41122005E768C /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79A31DF41122005E768C /* UIColor+Helpers.swift */; };
 		09BE79A71DF46539005E768C /* CarouselLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79A61DF46539005E768C /* CarouselLayoutAttributes.swift */; };
+		24759FEB4C660559675E5C28 /* Pods_VideoCarousel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291E80A1E18D5C47EE599ADC /* Pods_VideoCarousel.framework */; };
+		2FFE5F2621368B867C204D7A /* Pods_VideoCarouselTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A1DBCFC9AB7609A1F48BC /* Pods_VideoCarouselTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,12 @@
 		09BE79A21DF41122005E768C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09BE79A31DF41122005E768C /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		09BE79A61DF46539005E768C /* CarouselLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselLayoutAttributes.swift; sourceTree = "<group>"; };
+		183A1DBCFC9AB7609A1F48BC /* Pods_VideoCarouselTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCarouselTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		291E80A1E18D5C47EE599ADC /* Pods_VideoCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71DCB28C03A1F0B2632A7219 /* Pods-VideoCarousel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCarousel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoCarousel/Pods-VideoCarousel.debug.xcconfig"; sourceTree = "<group>"; };
+		73DCC70AC793084B06C4EB25 /* Pods-VideoCarouselTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCarouselTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoCarouselTests/Pods-VideoCarouselTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8EB9DEA20C15365F82C0D092 /* Pods-VideoCarousel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCarousel.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoCarousel/Pods-VideoCarousel.release.xcconfig"; sourceTree = "<group>"; };
+		916D0AF6AD2305674224000B /* Pods-VideoCarouselTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCarouselTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoCarouselTests/Pods-VideoCarouselTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24759FEB4C660559675E5C28 /* Pods_VideoCarousel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFE5F2621368B867C204D7A /* Pods_VideoCarouselTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,8 @@
 				0968598C1DF2DF55005756D9 /* VideoCarousel */,
 				096859A11DF2DF56005756D9 /* VideoCarouselTests */,
 				0968598B1DF2DF55005756D9 /* Products */,
+				907CBDF5DDA252D8B3D580C3 /* Pods */,
+				5DBEB4021A8B4274E44D5C8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +203,26 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		5DBEB4021A8B4274E44D5C8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				291E80A1E18D5C47EE599ADC /* Pods_VideoCarousel.framework */,
+				183A1DBCFC9AB7609A1F48BC /* Pods_VideoCarouselTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		907CBDF5DDA252D8B3D580C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71DCB28C03A1F0B2632A7219 /* Pods-VideoCarousel.debug.xcconfig */,
+				8EB9DEA20C15365F82C0D092 /* Pods-VideoCarousel.release.xcconfig */,
+				73DCC70AC793084B06C4EB25 /* Pods-VideoCarouselTests.debug.xcconfig */,
+				916D0AF6AD2305674224000B /* Pods-VideoCarouselTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 096859A71DF2DF56005756D9 /* Build configuration list for PBXNativeTarget "VideoCarousel" */;
 			buildPhases = (
+				7B286C99CE0BAF18FED6737D /* [CP] Check Pods Manifest.lock */,
 				096859861DF2DF55005756D9 /* Sources */,
 				096859871DF2DF55005756D9 /* Frameworks */,
 				096859881DF2DF55005756D9 /* Resources */,
+				6B9E49053F6655BA5C5244BE /* [CP] Embed Pods Frameworks */,
+				DCC1D9D176008F91064AF74C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 096859AA1DF2DF56005756D9 /* Build configuration list for PBXNativeTarget "VideoCarouselTests" */;
 			buildPhases = (
+				8FF2E57EC1449636560C498D /* [CP] Check Pods Manifest.lock */,
 				0968599A1DF2DF56005756D9 /* Sources */,
 				0968599B1DF2DF56005756D9 /* Frameworks */,
 				0968599C1DF2DF56005756D9 /* Resources */,
+				548E0D78A1619132F274E1A9 /* [CP] Embed Pods Frameworks */,
+				621E05C0673EC125A078D47B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +331,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		548E0D78A1619132F274E1A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoCarouselTests/Pods-VideoCarouselTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		621E05C0673EC125A078D47B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoCarouselTests/Pods-VideoCarouselTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B9E49053F6655BA5C5244BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoCarousel/Pods-VideoCarousel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B286C99CE0BAF18FED6737D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8FF2E57EC1449636560C498D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCC1D9D176008F91064AF74C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoCarousel/Pods-VideoCarousel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		096859861DF2DF55005756D9 /* Sources */ = {
@@ -444,7 +575,9 @@
 		};
 		096859A81DF2DF56005756D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71DCB28C03A1F0B2632A7219 /* Pods-VideoCarousel.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
 				INFOPLIST_FILE = "VideoCarousel/Supporting Files/Info.plist";
@@ -459,7 +592,9 @@
 		};
 		096859A91DF2DF56005756D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EB9DEA20C15365F82C0D092 /* Pods-VideoCarousel.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
 				INFOPLIST_FILE = "VideoCarousel/Supporting Files/Info.plist";
@@ -474,8 +609,9 @@
 		};
 		096859AB1DF2DF56005756D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DCC70AC793084B06C4EB25 /* Pods-VideoCarouselTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
@@ -491,8 +627,9 @@
 		};
 		096859AC1DF2DF56005756D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 916D0AF6AD2305674224000B /* Pods-VideoCarouselTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;

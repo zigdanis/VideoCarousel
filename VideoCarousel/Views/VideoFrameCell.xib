@@ -24,10 +24,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-winter" translatesAutoresizingMaskIntoConstraints="NO" id="7TN-Dy-Yg0">
-                        <rect key="frame" x="8" y="8" width="268" height="160.5"/>
+                        <rect key="frame" x="8" y="8" width="268" height="160"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="300" verticalCompressionResistancePriority="755" text="Комедия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK8-Dn-7Vy">
-                        <rect key="frame" x="8" y="176.5" width="268" height="26.5"/>
+                        <rect key="frame" x="8" y="176" width="268" height="27"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
