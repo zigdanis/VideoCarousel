@@ -11,13 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     var topCarousel: UICollectionView!
+    var bottomCarousel: UICollectionView!
     let videoFramesVM = VideoFramesViewModel()
+    let moviesVM = MoviesViewModel()
     var didInitialScroll = false
+    var arrow: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appPink
         setupTopCarousel()
+        setupArrow()
+        setupBottomCarousel()
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +52,38 @@ class ViewController: UIViewController {
             topCarousel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             topCarousel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             topCarousel.widthAnchor.constraint(equalTo: topCarousel.heightAnchor, multiplier: 4.3)
+        ]
+        NSLayoutConstraint.activate(consts)
+    }
+    
+    private func setupArrow() {
+        let arrowImage = UIImage(named: "arrow")
+        arrow = UIImageView(image: arrowImage)
+        arrow.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(arrow)
+        let consts = [
+            arrow.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            arrow.topAnchor.constraint(equalTo: topCarousel.bottomAnchor, constant: 36)
+        ]
+        NSLayoutConstraint.activate(consts)
+    }
+    
+    private func setupBottomCarousel() {
+        let flowLayout = MoviesLayout()
+        bottomCarousel = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        bottomCarousel.translatesAutoresizingMaskIntoConstraints = false
+        bottomCarousel.dataSource = moviesVM.provider
+        bottomCarousel.backgroundColor = UIColor.clear
+        bottomCarousel.layer.cornerRadius = Rounding
+        let nib = UINib(nibName: MovieCellIdentifier, bundle: nil)
+        bottomCarousel.register(nib, forCellWithReuseIdentifier: MovieCellIdentifier)
+        
+        view.addSubview(bottomCarousel)
+        let consts = [
+            bottomCarousel.topAnchor.constraint(equalTo: arrow.bottomAnchor, constant: 36),
+            bottomCarousel.leadingAnchor.constraint(equalTo: topCarousel.leadingAnchor),
+            bottomCarousel.trailingAnchor.constraint(equalTo: topCarousel.trailingAnchor),
+            bottomCarousel.heightAnchor.constraint(equalTo: topCarousel.heightAnchor)
         ]
         NSLayoutConstraint.activate(consts)
     }

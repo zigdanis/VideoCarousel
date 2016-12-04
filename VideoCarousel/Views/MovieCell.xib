@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="QrZ-Bw-i74" customClass="MovieCell" customModule="VideoCarousel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="223"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="223"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-winter" translatesAutoresizingMaskIntoConstraints="NO" id="Ru3-YH-zK2">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="223"/>
+                    </imageView>
+                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB4-Mp-oKS">
+                        <rect key="frame" x="30" y="30" width="298" height="163"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orginal title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1w-VU-JJC">
+                        <rect key="frame" x="30" y="30" width="298" height="163"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aB4-Mp-oKS" secondAttribute="trailing" constant="30" id="1IL-AR-BoM"/>
+                <constraint firstAttribute="bottom" secondItem="Ru3-YH-zK2" secondAttribute="bottom" id="20w-8z-XDM"/>
+                <constraint firstAttribute="bottom" secondItem="aB4-Mp-oKS" secondAttribute="bottom" constant="30" id="6ts-XG-a6x"/>
+                <constraint firstItem="Ru3-YH-zK2" firstAttribute="top" secondItem="QrZ-Bw-i74" secondAttribute="top" id="Ekb-rV-p1p"/>
+                <constraint firstAttribute="trailing" secondItem="Ru3-YH-zK2" secondAttribute="trailing" id="FcE-fl-ZmQ"/>
+                <constraint firstItem="F1w-VU-JJC" firstAttribute="leading" secondItem="aB4-Mp-oKS" secondAttribute="leading" id="O8V-Rf-dwf"/>
+                <constraint firstItem="F1w-VU-JJC" firstAttribute="top" secondItem="aB4-Mp-oKS" secondAttribute="top" id="OJ6-Eq-Jte"/>
+                <constraint firstItem="aB4-Mp-oKS" firstAttribute="top" secondItem="QrZ-Bw-i74" secondAttribute="top" constant="30" id="aCw-V7-bC3"/>
+                <constraint firstItem="aB4-Mp-oKS" firstAttribute="leading" secondItem="QrZ-Bw-i74" secondAttribute="leading" constant="30" id="bgP-1Z-re2"/>
+                <constraint firstItem="F1w-VU-JJC" firstAttribute="bottom" secondItem="aB4-Mp-oKS" secondAttribute="bottom" id="d3m-bt-fYS"/>
+                <constraint firstItem="F1w-VU-JJC" firstAttribute="trailing" secondItem="aB4-Mp-oKS" secondAttribute="trailing" id="ksw-Zm-aZX"/>
+                <constraint firstItem="Ru3-YH-zK2" firstAttribute="leading" secondItem="QrZ-Bw-i74" secondAttribute="leading" id="nBx-Ln-4hc"/>
+            </constraints>
+            <size key="customSize" width="358" height="223"/>
+            <connections>
+                <outlet property="blackPanel" destination="aB4-Mp-oKS" id="5Hd-mY-52n"/>
+                <outlet property="imageView" destination="Ru3-YH-zK2" id="1sr-JM-mmj"/>
+                <outlet property="movieLabel" destination="F1w-VU-JJC" id="BLT-gi-DeI"/>
+            </connections>
+            <point key="canvasLocation" x="-7" y="-7.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="close-winter" width="550" height="366"/>
+    </resources>
+</document>

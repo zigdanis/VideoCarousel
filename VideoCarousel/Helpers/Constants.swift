@@ -11,4 +11,5 @@ import UIKit
 
 let Rounding: CGFloat = 4
 let VideoFrameCellIdentifier = "VideoFrameCell"
+let MovieCellIdentifier = "MovieCell"
 let BigNumber: Int = 100
