@@ -15,7 +15,7 @@ class VideoFrameTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        videoFrame = VideoFrame(title: "Title", image: UIImage(named:"close-winter"), selected: false)
+        videoFrame = VideoFrame(image: UIImage(named:"close-winter"), genre: .Action)
     }
     
     

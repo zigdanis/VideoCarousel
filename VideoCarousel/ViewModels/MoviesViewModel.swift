@@ -21,7 +21,7 @@ final class MoviesViewModel {
     
     init(videoFramesVM: VideoFramesViewModel) {
         self.videoFramesVM = videoFramesVM
-        let movies = [
+        let movies: [Movie] = [
             Movie(name: "Deadpool", image: UIImage(named:"action-1"), genre: .Action)!,
             Movie(name: "Iron man 2", image: UIImage(named:"action-2"), genre: .Action)!,
             Movie(name: "Tron", image: UIImage(named:"action-3"), genre: .Action)!,

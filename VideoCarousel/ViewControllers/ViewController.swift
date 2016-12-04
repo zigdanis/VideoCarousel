@@ -12,7 +12,6 @@ import RxSwift
 final class ViewController: UIViewController {
 
     var topCarousel: UICollectionView!
-    var bottomCarousel: UICollectionView!
     let videoFramesVM = VideoFramesViewModel()
     var moviesVM: MoviesViewModel!
     var didInitialScroll = false
@@ -32,28 +31,20 @@ final class ViewController: UIViewController {
         if !didInitialScroll {
             let ip = IndexPath(item: BigNumber/2, section: 0)
             topCarousel.scrollToItem(at: ip, at: .centeredHorizontally, animated: false)
-            topCarousel.contentOffset = videoFramesVM.topLayout.targetContentOffset(forProposedContentOffset: topCarousel.contentOffset, withScrollingVelocity: .zero)
+            topCarousel.contentOffset = videoFramesVM.layout.targetContentOffset(forProposedContentOffset: topCarousel.contentOffset, withScrollingVelocity: .zero)
             didInitialScroll = true
         }
     }
     
     private func setupTopCarousel() {
-        topCarousel = UICollectionView(frame: .zero, collectionViewLayout: videoFramesVM.topLayout)
-        topCarousel.translatesAutoresizingMaskIntoConstraints = false
-        topCarousel.dataSource = videoFramesVM.framesProvider
-        topCarousel.delegate = videoFramesVM.topLayout
-        topCarousel.backgroundColor = UIColor.black
-        topCarousel.decelerationRate = UIScrollViewDecelerationRateFast
-        topCarousel.layer.cornerRadius = Rounding
-        let nib = UINib(nibName: VideoFrameCellIdentifier, bundle: nil)
-        topCarousel.register(nib, forCellWithReuseIdentifier: VideoFrameCellIdentifier)
+        topCarousel = videoFramesVM.collectionView
         
         view.addSubview(topCarousel)
         let consts = [
             topCarousel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 25),
             topCarousel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             topCarousel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            topCarousel.widthAnchor.constraint(equalTo: topCarousel.heightAnchor, multiplier: 4.3)
+            topCarousel.widthAnchor.constraint(equalTo: topCarousel.heightAnchor, multiplier: 4)
         ]
         NSLayoutConstraint.activate(consts)
     }
@@ -71,7 +62,7 @@ final class ViewController: UIViewController {
     }
     
     private func setupBottomCarousel() {
-        bottomCarousel = moviesVM.collectionView
+        let bottomCarousel = moviesVM.collectionView
         
         view.addSubview(bottomCarousel)
         let consts = [

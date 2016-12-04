@@ -32,6 +32,7 @@
 		09BE79B51DF4807D005E768C /* MoviesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79B41DF4807D005E768C /* MoviesProvider.swift */; };
 		09BE79B71DF480A1005E768C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79B61DF480A1005E768C /* Movie.swift */; };
 		09BE79B91DF482B3005E768C /* MoviesLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE79B81DF482B3005E768C /* MoviesLayout.swift */; };
+		09CF95271DF49DC50028FAAF /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CF95261DF49DC50028FAAF /* MovieTests.swift */; };
 		24759FEB4C660559675E5C28 /* Pods_VideoCarousel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291E80A1E18D5C47EE599ADC /* Pods_VideoCarousel.framework */; };
 		2FFE5F2621368B867C204D7A /* Pods_VideoCarouselTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183A1DBCFC9AB7609A1F48BC /* Pods_VideoCarouselTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		09BE79B41DF4807D005E768C /* MoviesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesProvider.swift; sourceTree = "<group>"; };
 		09BE79B61DF480A1005E768C /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		09BE79B81DF482B3005E768C /* MoviesLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesLayout.swift; sourceTree = "<group>"; };
+		09CF95261DF49DC50028FAAF /* MovieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTests.swift; sourceTree = "<group>"; };
 		183A1DBCFC9AB7609A1F48BC /* Pods_VideoCarouselTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCarouselTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		291E80A1E18D5C47EE599ADC /* Pods_VideoCarousel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCarousel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DCB28C03A1F0B2632A7219 /* Pods-VideoCarousel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCarousel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoCarousel/Pods-VideoCarousel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				096859A41DF2DF56005756D9 /* Info.plist */,
 				096859C31DF2E375005756D9 /* VideoFrameTests.swift */,
+				09CF95261DF49DC50028FAAF /* MovieTests.swift */,
 				096859CD1DF32D26005756D9 /* VideoFrameProviderTests.swift */,
 			);
 			path = VideoCarouselTests;
@@ -481,6 +484,7 @@
 			files = (
 				096859CE1DF32D26005756D9 /* VideoFrameProviderTests.swift in Sources */,
 				096859C41DF2E375005756D9 /* VideoFrameTests.swift in Sources */,
+				09CF95271DF49DC50028FAAF /* MovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +536,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -581,6 +586,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -609,7 +615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 71DCB28C03A1F0B2632A7219 /* Pods-VideoCarousel.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
 				INFOPLIST_FILE = "VideoCarousel/Supporting Files/Info.plist";
@@ -626,7 +632,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EB9DEA20C15365F82C0D092 /* Pods-VideoCarousel.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XMSU8WJG5R;
 				INFOPLIST_FILE = "VideoCarousel/Supporting Files/Info.plist";

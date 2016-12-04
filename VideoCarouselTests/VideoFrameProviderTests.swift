@@ -16,7 +16,7 @@ class VideoFrameProviderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        videoFrame = VideoFrame(title: "Title", image: UIImage(named:"close-winter"), selected: false)
+        videoFrame = VideoFrame(image: UIImage(named:"close-winter"), genre: .Action)
         provider = VideoFrameProvider(frames: [videoFrame!])
     }
 
@@ -43,7 +43,7 @@ class VideoFrameProviderTests: XCTestCase {
     
     func testReturningSecondFrameForIndexMinus3() {
         let index = -3
-        let secondFrame = VideoFrame(title: "Second frame", image: videoFrame.image)
+        let secondFrame = VideoFrame(image: videoFrame.image, genre: .Action)
         let frames = [videoFrame!, secondFrame!]
         provider = VideoFrameProvider(frames: frames)
         let frame = provider.itemAtIndex(index: index)
