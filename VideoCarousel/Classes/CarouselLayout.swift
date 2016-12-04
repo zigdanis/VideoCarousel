@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class InfinityCarouselLayout: UICollectionViewFlowLayout {
+class CarouselLayout: UICollectionViewFlowLayout {
     
     let increaseMultiplier: CGFloat = 1.4
     let verticalPadding: CGFloat = 15
@@ -29,11 +29,6 @@ class InfinityCarouselLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         itemSize = normalItemSize()
-    }
-    
-    private func centerItemSize() -> CGSize {
-        let normal = normalItemSize()
-        return CGSize(width: normal.width*increaseMultiplier, height: normal.height*increaseMultiplier)
     }
     
     private func normalItemSize() -> CGSize {
@@ -84,25 +79,7 @@ class InfinityCarouselLayout: UICollectionViewFlowLayout {
                 offsetAdjsutment = itemOffset - theCenter
             }
         }
-        print("proposedContentOffset \(proposedContentOffset)")
-        print("offsetAdjsutment \(offsetAdjsutment)")
         return CGPoint(x: proposedContentOffset.x + offsetAdjsutment, y: proposedContentOffset.y)
-        
-        /*
-        var offsetAdjsutment = CGFloat.greatestFiniteMagnitude
-        let horizontalOffset = proposedContentOffset.x + offset
-        guard let width = collectionView?.bounds.size.width else { return proposedContentOffset }
-        guard let height = collectionView?.bounds.size.height else { return proposedContentOffset }
-        let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width:width , height: height)
-        guard let atts = layoutAttributesForElements(in: targetRect) else { return proposedContentOffset }
-        for att in atts {
-            let itemOffset = att.frame.origin.x
-            if abs(itemOffset - horizontalOffset) < abs(offsetAdjsutment) {
-                offsetAdjsutment = itemOffset - horizontalOffset
-            }
-        }
-        return CGPoint(x: proposedContentOffset.x + offsetAdjsutment, y: proposedContentOffset.y)
- */
     }
     
 }

@@ -11,32 +11,33 @@ import UIKit
 class ViewController: UIViewController {
 
     var topCarousel: UICollectionView!
-    var topLayout: InfinityCarouselLayout!
-    var framesProvider: VideoFrameProvider!
+    var topLayout: CarouselLayout!
+    let videoFramesVM = VideoFramesViewModel()
+    var didInitialScroll = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.appPink
-        setupFramesProvider()
         setupTopCarousel()
     }
     
-    private func setupFramesProvider() {
-        guard let frame = VideoFrame(title: "Horror", image: UIImage(named: "close-winter")) else {
-            assertionFailure("Should be able to create frame with provided image")
-            return
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !didInitialScroll {
+            let ip = IndexPath(item: 50, section: 0)
+            topCarousel.scrollToItem(at: ip, at: .centeredHorizontally, animated: false)
+            didInitialScroll = true
         }
-        framesProvider = VideoFrameProvider(frames: [frame])
     }
     
     private func setupTopCarousel() {
-        topLayout = InfinityCarouselLayout()
+        topLayout = CarouselLayout()
         topCarousel = UICollectionView(frame: .zero, collectionViewLayout: topLayout)
         topCarousel.translatesAutoresizingMaskIntoConstraints = false
-        topCarousel.dataSource = framesProvider
+        topCarousel.dataSource = videoFramesVM.framesProvider
         topCarousel.backgroundColor = UIColor.black
         topCarousel.decelerationRate = UIScrollViewDecelerationRateFast
-        let nib = UINib(nibName: "VideoFrameCell", bundle: nil)
+        let nib = UINib(nibName: VideoFrameCellIdentifier, bundle: nil)
         topCarousel.register(nib, forCellWithReuseIdentifier: VideoFrameCellIdentifier)
         
         view.addSubview(topCarousel)
