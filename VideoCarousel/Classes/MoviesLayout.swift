@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MoviesLayout: UICollectionViewFlowLayout {
+final class MoviesLayout: UICollectionViewFlowLayout {
     
     private let aspectRatio: CGFloat = 1.68
     

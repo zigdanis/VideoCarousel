@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     var topCarousel: UICollectionView!
     var bottomCarousel: UICollectionView!

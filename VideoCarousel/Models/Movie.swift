@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Movie {
+struct Movie {
     let name: String
     let image: UIImage
     

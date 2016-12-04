@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CarouselLayoutAttributes: UICollectionViewLayoutAttributes {
+final class CarouselLayoutAttributes: UICollectionViewLayoutAttributes {
     var selected = false
     
     override func copy(with zone: NSZone? = nil) -> Any {

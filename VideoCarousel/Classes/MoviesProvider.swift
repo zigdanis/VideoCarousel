@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MoviesProvider: NSObject, UICollectionViewDataSource {
+final class MoviesProvider: NSObject, UICollectionViewDataSource {
     
     var movies: [Movie]
     

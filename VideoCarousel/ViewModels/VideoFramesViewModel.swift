@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 
-class VideoFramesViewModel {
+final class VideoFramesViewModel {
 
     private let disposeBag = DisposeBag()
     private let videoFrame: Observable<VideoFrame>

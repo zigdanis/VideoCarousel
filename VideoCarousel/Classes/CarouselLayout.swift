@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 
-class CarouselLayout: UICollectionViewFlowLayout, UICollectionViewDelegate {
+final class CarouselLayout: UICollectionViewFlowLayout, UICollectionViewDelegate {
     
     private let increaseMultiplier: CGFloat = 1.6
     private let verticalPadding: CGFloat = 15

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MoviesViewModel {
+final class MoviesViewModel {
     
     let provider: MoviesProvider
     

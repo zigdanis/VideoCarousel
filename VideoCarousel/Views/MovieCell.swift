@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MovieCell: UICollectionViewCell {
+final class MovieCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var blackPanel: UIView!

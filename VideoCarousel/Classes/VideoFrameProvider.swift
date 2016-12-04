@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class VideoFrameProvider: NSObject, UICollectionViewDataSource {
+final class VideoFrameProvider: NSObject, UICollectionViewDataSource {
     var frames: [VideoFrame]
     
     init?(frames: [VideoFrame]) {
