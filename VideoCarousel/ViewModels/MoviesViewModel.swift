@@ -17,7 +17,7 @@ final class MoviesViewModel {
     
     private let provider: MoviesProvider
     private let layout: MoviesLayout
-    private let disposeBag = DisposeBag()
+    private let db = DisposeBag()
     
     init(videoFramesVM: VideoFramesViewModel) {
         self.videoFramesVM = videoFramesVM
@@ -43,7 +43,7 @@ final class MoviesViewModel {
                 self.provider.updateSelectedMovies(for: genre)
                 self.collectionView.reloadData()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: db)
     }
     
     func setupCollectionView() {

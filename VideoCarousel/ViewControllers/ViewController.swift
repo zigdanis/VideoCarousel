@@ -19,7 +19,7 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.appPink
+        view.backgroundColor = UIColor.appGray
         moviesVM = MoviesViewModel(videoFramesVM: videoFramesVM)
         setupTopCarousel()
         setupArrow()
