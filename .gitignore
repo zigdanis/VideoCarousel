@@ -17,3 +17,4 @@ xcuserdata
 DerivedData
 Pods
 fastlane/report.xml 
+Podfile.lock

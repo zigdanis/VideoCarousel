@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/zigdanis/VideoCarousel.svg?branch=master)](https://travis-ci.org/zigdanis/VideoCarousel)
+
 Video Carousel
 ==============
 App shows predefined list of genres that is implemented as infinte looped scrollable collection. Selected Genre item controls which movie previews will be shown underneath genres list.
