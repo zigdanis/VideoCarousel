@@ -1,0 +1,5 @@
+os: osx
+language: swift
+osx_image: xcode9
+xcode_workspace: VideoCarousel.xcworkspace
+xcode_scheme: VideoCarousel
